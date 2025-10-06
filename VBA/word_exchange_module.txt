@@ -1,0 +1,48 @@
+Sub generate_text()
+
+ThisWorkbook.Activate
+    Dim worktxt As String
+    worktxt = Cells(6, 2).Value
+    If Cells(3, 5).Value = "○" Then
+        worktxt = Replace(worktxt, vbCrLf, "\n")
+        worktxt = Replace(worktxt, vbCr, "\n")
+        worktxt = Replace(worktxt, vbLf, "\n")
+    End If
+        
+    If Cells(3, 6).Value = "○" Then
+        worktxt = Replace(worktxt, "　", "")
+        worktxt = Replace(worktxt, " ", "")
+    End If
+        
+    If Cells(3, 7).Value = "○" Then
+        worktxt = Replace(worktxt, "０", "0")
+        worktxt = Replace(worktxt, "１", "1")
+        worktxt = Replace(worktxt, "２", "2")
+        worktxt = Replace(worktxt, "３", "3")
+        worktxt = Replace(worktxt, "４", "4")
+        worktxt = Replace(worktxt, "５", "5")
+        worktxt = Replace(worktxt, "６", "6")
+        worktxt = Replace(worktxt, "７", "7")
+        worktxt = Replace(worktxt, "８", "8")
+        worktxt = Replace(worktxt, "９", "9")
+    End If
+        
+    If Cells(3, 8).Value = "○" Then
+        worktxt = Replace(worktxt, "0", "０")
+        worktxt = Replace(worktxt, "1", "１")
+        worktxt = Replace(worktxt, "2", "２")
+        worktxt = Replace(worktxt, "3", "３")
+        worktxt = Replace(worktxt, "4", "４")
+        worktxt = Replace(worktxt, "5", "５")
+        worktxt = Replace(worktxt, "6", "６")
+        worktxt = Replace(worktxt, "7", "７")
+        worktxt = Replace(worktxt, "8", "８")
+        worktxt = Replace(worktxt, "9", "９")
+    End If
+        
+    If Not Cells(3, 9).Value = "" Then
+        worktxt = Replace(worktxt, Cells(3, 9).Value, "")
+    End If
+    
+    Cells(6, 3).Value = worktxt
+End Sub
